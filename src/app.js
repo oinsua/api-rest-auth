@@ -8,11 +8,13 @@ const pkg = require('../package.json'); //Se importa el objeto package.json
 const auth_routes = require('./routes/authRoutes');
 const serv_routes = require('./routes/serviceRoutes');
 const user_routes = require('./routes/userRoutes');
-
+//Importar setup para crear los roles al inicio de la app
+const createRol = require('./libs/setup');
  
 //Setings
 const app = express(); //Se crea el objeto app
 const server = http.createServer(app); //Se crea el servidor a traves del objeto http
+createRol();  //Se ejecuta la funcion para crear todos los roles, esto ocurre al iniciar el server
 //Middlewares
 cors_options = {
     origin: '*'

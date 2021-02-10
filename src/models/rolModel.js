@@ -7,15 +7,6 @@ const RolSchema = new Schema({
           required: true, //Es requerido
           trim: true //Eliminar los espacios en blancos 
       },
-      module: {
-          type: String,
-          required: true,
-          trim: true
-      },
-      readOnly: {
-          type: Boolean,
-          default: true  //En caso de no especificarse su valor siempre sera false
-      }
 }, 
   {
     versionKey: false, //para evitar que en la BD no aparezca __v
