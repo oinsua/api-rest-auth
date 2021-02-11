@@ -16,7 +16,7 @@ const app = express(); //Se crea el objeto app
 const server = http.createServer(app); //Se crea el servidor a traves del objeto http
 createRol();  //Se ejecuta la funcion para crear todos los roles, esto ocurre al iniciar el server
 //Middlewares
-cors_options = {
+const cors_options = {
     origin: '*'
 }
 app.use(cors(cors_options)); //Para establecer las direcciones http a traves de las cuales se reciben las solicitudes
@@ -40,6 +40,6 @@ app.get('/', (req, res) => { //Se muestra en el navegador un mensaje de bienveni
 //Se agregan las rutas a la app
 app.use('/auth', auth_routes);
 app.use('/serv', serv_routes);
-app.use('user', user_routes);
+app.use('/user', user_routes);
 
 module.exports = {app, server};

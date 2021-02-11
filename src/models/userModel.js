@@ -1,6 +1,6 @@
 //Importar conexion a mongodb
 const mongoose = require('../database');
-
+//Importa bcrypt para cifrar el password
 const bcrypt = require('bcrypt');
 const { Mongoose } = require('mongoose');
 

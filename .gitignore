@@ -3,3 +3,9 @@ node_modules
 
 ##variables de entornos
 .env
+
+## dist
+dist
+
+## postman
+postman

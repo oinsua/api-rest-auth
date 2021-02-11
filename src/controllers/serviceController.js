@@ -2,7 +2,7 @@ const ServModel = require('../models/serviceModel');
 
 //Funcion que se encarga de gestionar el proceso de insertar un nuevo servicio
 const insertService = async (req, res) => {
-   try {
+   try { 
       const {code, name, um, quantity, price} = req.body; //Seleccionar los parametros por desctructuracion
       const newService = new ServModel({ code,name, um, quantity, price, total: quantity*price}) //Inicializar el objeto model
       const servSave = await newService.save(); //Insertar el servicio en la base de datos
@@ -17,7 +17,7 @@ const insertService = async (req, res) => {
 const getServices = async (req, res) => {
     try {
        const allService = await ServModel.find(); //Se buscan todos los servicios de la collections
-       console.log(allService);
+       
        res.json(allService); //Se emiten los servicios
     } catch (error) {
        res.status(500).json({
@@ -71,7 +71,7 @@ const getServiceByTotal = async (req, res) => {
     try {
         await ServModel.findByIdAndDelete(req.params.id);
         res.json({
-           message: `Task ${req.params.id} have been delete successfully`
+           message: `Service ${req.params.id} have been delete successfully`
         })
     } catch (error) {
        res.status(500).json({
